@@ -4,20 +4,23 @@ require_once 'conf/common.inc.php';
 require_once 'inc/html.inc.php';
 require_once 'inc/collectd.inc.php';
 
-$host = validate_get(GET('h'), 'host');
-$plugin = validate_get(GET('p'), 'plugin');
+$host = GET('h');
+$plugin = GET('p');
 
 $selected_plugins = !$plugin ? $CONFIG['overview'] : array($plugin);
 
 html_start();
 
-printf("<fieldset id=\"%s\"/>", $host);
-printf("<legend>%s</legend>", $host);
+printf("<fieldset id=\"%s\">", htmlentities($host));
+printf("<legend>%s</legend>", htmlentities($host));
 
+		echo <<<EOT
+<input type="checkbox" id="navicon" class="navicon" />
+<label for="navicon"></label>
 
-$plugins = collectd_plugins($host);
+EOT;
 
-if(!$plugins) {
+if (!strlen($host) || !$plugins = collectd_plugins($host)) {
 	echo "Unknown host\n";
 	return false;
 }
@@ -35,5 +38,3 @@ echo '</div>';
 printf("</fieldset>");
 
 html_end();
-
-?>
