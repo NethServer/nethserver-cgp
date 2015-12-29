@@ -1,7 +1,7 @@
 <?php
 
 # collectd's datadir
-$CONFIG['datadir'] = '/var/lib/collectd';
+$CONFIG['datadir'] = '/var/lib/collectd/rrd';
 
 # "png", "svg", "canvas" or "hybrid" (canvas on detail page, png on the others) graphs
 $CONFIG['graph_type'] = 'hybrid';
