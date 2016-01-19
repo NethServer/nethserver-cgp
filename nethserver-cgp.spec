@@ -10,7 +10,6 @@ URL: %{url_prefix}/%{name}
 BuildRequires: nethserver-devtools
 
 Requires: nethserver-collectd, nethserver-httpd
-Requires: perl-CGI, perl-RRD-Simple
 Requires: nethserver-lib
 
 %description
