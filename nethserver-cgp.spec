@@ -6,6 +6,7 @@ License: GPL
 Source: %{name}-%{version}.tar.gz
 Source1: https://github.com/pommi/CGP/archive/master.tar.gz
 Source2: config.local.php
+Patch0:  header-color.patch
 BuildArch: noarch
 URL: %{url_prefix}/%{name}
 
@@ -23,6 +24,8 @@ See: http://pommi.nethuis.nl/category/cgp/
 mkdir -p root/usr/share/cgp
 tar xzvf %{SOURCE1} --strip-components=1 -C root/usr/share/cgp
 cp %{SOURCE2} root/usr/share/cgp/conf/config.local.php
+find
+patch -p0 <  %{PATCH0}
 
 %build
 perl createlinks

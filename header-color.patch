@@ -1,0 +1,24 @@
+--- root/usr/share/cgp/layout/style.css.ori	2016-02-02 18:49:46.677857352 +0100
++++ root/usr/share/cgp/layout/style.css	2016-02-02 18:50:08.838799616 +0100
+@@ -23,9 +23,9 @@
+ }
+ 
+ #header {
+-	background: #4d79b5;
++	background: #ccc;
+ 	padding-left: 10px;
+-	color: #fff;
++	color: #222;
+ }
+ 
+ #header h1 {
+@@ -38,7 +38,7 @@
+ 
+ #header a{
+ 	display: block;
+-	color: #fff;
++	color: #222;
+ 	text-decoration: none;
+ }
+ 
+
