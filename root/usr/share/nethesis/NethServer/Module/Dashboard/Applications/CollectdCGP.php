@@ -38,7 +38,7 @@ class CollectdCGP extends \Nethgui\Module\AbstractModule implements \NethServer\
          $cweb = $this->getPlatform()->getDatabase('configuration')->getKey('cgp');
          $host = explode(':',$_SERVER['HTTP_HOST']);
          return array(
-            'url' => "http://".$host[0]."/".$cweb['alias']."/"
+            'url' => "https://".$host[0].":980/".$cweb['alias']."/"
          );
     } 
 }
