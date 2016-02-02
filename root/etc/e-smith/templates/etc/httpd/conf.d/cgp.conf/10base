@@ -18,9 +18,9 @@
     LoadModule cgi_module modules/mod_cgi.so
 </IfModule>
     
-Alias /$alias /var/www/html/cgp
+Alias /$alias /usr/share/cgp
 
-<Directory /var/www/html/cgp>
+<Directory /usr/share/cgp>
     Options Indexes FollowSymLinks MultiViews
     AllowOverride all
     Order deny,allow

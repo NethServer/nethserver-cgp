@@ -4,6 +4,8 @@ Version: 1.0.0
 Release: 1%{?dist}
 License: GPL
 Source: %{name}-%{version}.tar.gz
+Source1: https://github.com/pommi/CGP/archive/master.tar.gz
+Source2: config.local.php
 BuildArch: noarch
 URL: %{url_prefix}/%{name}
 
@@ -19,6 +21,9 @@ See: http://pommi.nethuis.nl/category/cgp/
 
 %prep
 %setup
+mkdir -p root/usr/share/cgp
+tar xzvf %{SOURCE1} --strip-components=1 -C root/usr/share/cgp
+cp %{SOURCE2} root/usr/share/cgp/conf/config.local.php
 
 %build
 perl createlinks
@@ -30,7 +35,7 @@ rm -rf %{buildroot}
 
 %files -f %{version}-%{release}-filelist
 %defattr(-,root,root)
-%config(noreplace) /var/www/html/cgp/conf/config.local.php
+%config(noreplace) /usr/share/cgp/conf/config.local.php
 %doc COPYING
 
 %changelog
