@@ -5,25 +5,13 @@
     my $confdb = esmith::ConfigDB->open;
     my $cgp = $confdb->get('cgp') or die "No collectd-web db entry found\n";
     my $alias = $cgp->prop('alias') || "";
-    
+
     # initialize alias if needed
     if ($alias eq "") {
         $alias = esmith::util::genRandomHash();
         $confdb->set_prop('cgp','alias',$alias);
     }
 
-
-    $OUT = "
-<IfModule !cgi_module>
-    LoadModule cgi_module modules/mod_cgi.so
-</IfModule>
-    
-Alias /$alias /var/www/html/cgp
-
-<Directory /var/www/html/cgp>
-    Options Indexes FollowSymLinks MultiViews
-    AllowOverride all
-    Require local
-</Directory>
-";
+    $OUT .= "ProxyPass /$alias http://localhost/$alias\n";
+    $OUT .= "ProxyPassReverse /$alias http://localhost/$alias\n";
 }

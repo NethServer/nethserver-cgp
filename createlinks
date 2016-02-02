@@ -28,8 +28,12 @@ use esmith::Build::CreateLinks  qw(:all);
 
 my $event = "nethserver-cgp-update";
 
-event_actions($event, 'initialize-default-databases' => '00');
+event_actions($event, qw(
+              initialize-default-databases 00
+              nethserver-httpd-admin-asyncreload 99
+));
 templates2events("/etc/httpd/conf.d/cgp.conf",  $event);
+templates2events("/etc/httpd/admin-conf.d/cgp.conf",  $event);
 event_services($event, 'httpd' => 'reload');
 
 
