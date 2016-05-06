@@ -11,6 +11,10 @@
         $alias = esmith::util::genRandomHash();
         $confdb->set_prop('cgp','alias',$alias);
     }
+    my $allowHosts = ${'httpd-admin'}{'AllowHosts'} || '';
+    if ($allowHosts ne '') {
+       $allowHosts = "Order deny,allow\n    Deny from all\n    Allow from $allowHosts";
+    }
 
 
     $OUT = "
@@ -23,8 +27,7 @@ Alias /$alias /var/www/html/cgp
 <Directory /var/www/html/cgp>
     Options Indexes FollowSymLinks MultiViews
     AllowOverride all
-    Order deny,allow
-    Allow from $localAccess
+    $allowHosts
 </Directory>
 ";
 }
