@@ -13,6 +13,10 @@
     }
     my $allowHosts = ${'httpd-admin'}{'AllowHosts'} || '';
     if ($allowHosts ne '') {
+       # Convert from comma separated list to space separated
+       $allowHosts =~ s/,/ /g;
+       # Make sure that /32 ValidFrom specs don't cause Apache problems.
+       $allowHosts =~ s:/255.255.255.255::g;
        $allowHosts = "Order deny,allow\n    Deny from all\n    Allow from $allowHosts";
     }
 
