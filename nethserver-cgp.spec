@@ -1,6 +1,6 @@
 Summary: NethServer web interface to collectd
 Name: nethserver-cgp
-Version: 1.0.2
+Version: 2.0.0
 Release: 1%{?dist}
 License: GPL
 Source: %{name}-%{version}.tar.gz
@@ -39,6 +39,10 @@ rm -rf %{buildroot}
 %doc COPYING
 
 %changelog
+* Tue Jun 14 2016 Davide Principi <davide.principi@nethesis.it> - 2.0.0-1
+- CGP: update for Collectd 5 - Enhancement #3404 [NethServer]
+- Syntax error in cgp and collectd-web httpd conf - Bug #3402 [NethServer]
+
 * Thu Jun 09 2016 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 1.0.2-1
 - Syntax error in cgp and collectd-web httpd conf - Bug #3402 [NethServer]
 
