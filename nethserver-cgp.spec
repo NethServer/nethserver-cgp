@@ -1,6 +1,6 @@
 Summary: NethServer web interface to collectd
 Name: nethserver-cgp
-Version: 2.1.0
+Version: 2.1.1
 Release: 1%{?dist}
 License: GPL
 Source: %{name}-%{version}.tar.gz
@@ -42,6 +42,9 @@ rm -rf %{buildroot}
 %dir %{_nseventsdir}/%{name}-update
 
 %changelog
+* Fri Jul 08 2016 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 2.1.1-1
+- Dashboard: remove link from Applications page
+
 * Thu Jul 07 2016 Stefano Fancello <stefano.fancello@nethesis.it> - 2.1.0-1
 - First NS7 release
 
