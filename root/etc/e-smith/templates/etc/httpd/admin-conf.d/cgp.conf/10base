@@ -1,0 +1,15 @@
+{
+    use esmith::ConfigDB;
+    use esmith::util;
+    my $confdb = esmith::ConfigDB->open;
+    my $alias = $cgp{'alias'} || "";
+
+    # initialize alias if needed
+    if ($alias eq "") {
+        $alias = esmith::util::genRandomHash();
+        $confdb->set_prop('cgp','alias',$alias);
+    }
+
+    $OUT .= "ProxyPass /$alias http://localhost/$alias\n";
+    $OUT .= "ProxyPassReverse /$alias http://localhost/$alias\n";
+}

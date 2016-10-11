@@ -1,37 +1,32 @@
 {
-    # no collectd-web variable prefilled because the minus character
     use esmith::ConfigDB;
     use esmith::util;
     my $confdb = esmith::ConfigDB->open;
-    my $cgp = $confdb->get('cgp') or die "No collectd-web db entry found\n";
-    my $alias = $cgp->prop('alias') || "";
-    
+    my $alias = $cgp{'alias'} || "";
+
     # initialize alias if needed
     if ($alias eq "") {
         $alias = esmith::util::genRandomHash();
         $confdb->set_prop('cgp','alias',$alias);
     }
+
     my $allowHosts = ${'httpd-admin'}{'AllowHosts'} || '';
     if ($allowHosts ne '') {
        # Convert from comma separated list to space separated
        $allowHosts =~ s/,/ /g;
        # Make sure that /32 ValidFrom specs don't cause Apache problems.
        $allowHosts =~ s:/255.255.255.255::g;
-       $allowHosts = "Order deny,allow\n    Deny from all\n    Allow from $allowHosts";
     }
 
-
     $OUT = "
-<IfModule !cgi_module>
-    LoadModule cgi_module modules/mod_cgi.so
-</IfModule>
-    
 Alias /$alias /usr/share/cgp
 
 <Directory /usr/share/cgp>
-    Options Indexes FollowSymLinks MultiViews
-    AllowOverride all
-    $allowHosts
+    DirectoryIndex index.php
+    AllowOverride None
+    Order deny,allow
+    Deny from all
+    Allow from localhost $allowHosts
 </Directory>
 ";
 }
