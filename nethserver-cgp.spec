@@ -1,6 +1,6 @@
 Summary: NethServer web interface to collectd
 Name: nethserver-cgp
-Version: 2.0.0
+Version: 2.0.1
 Release: 1%{?dist}
 License: GPL
 Source: %{name}-%{version}.tar.gz
@@ -39,6 +39,9 @@ rm -rf %{buildroot}
 %doc COPYING
 
 %changelog
+* Fri Oct 14 2016 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 2.0.1-1
+- Backport CGP and lightsquid access on port 980 - Enhancement #3426 [NethServer 6]
+
 * Tue Jun 14 2016 Davide Principi <davide.principi@nethesis.it> - 2.0.0-1
 - CGP: update for Collectd 5 - Enhancement #3404 [NethServer]
 - Syntax error in cgp and collectd-web httpd conf - Bug #3402 [NethServer]
