@@ -1,6 +1,6 @@
 Summary: NethServer web interface to collectd
 Name: nethserver-cgp
-Version: 2.1.1
+Version: 2.1.2
 Release: 1%{?dist}
 License: GPL
 Source: %{name}-%{version}.tar.gz
@@ -42,6 +42,9 @@ rm -rf %{buildroot}
 %dir %{_nseventsdir}/%{name}-update
 
 %changelog
+* Wed Jan 11 2017 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 2.1.2-1
+- httpd-admin: use KillMode=process - NethServer/dev#5190
+
 * Fri Jul 08 2016 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 2.1.1-1
 - Dashboard: remove link from Applications page
 
