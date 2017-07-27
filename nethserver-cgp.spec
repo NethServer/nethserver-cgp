@@ -1,6 +1,6 @@
 Summary: NethServer web interface to collectd
 Name: nethserver-cgp
-Version: 2.1.2
+Version: 2.1.3
 Release: 1%{?dist}
 License: GPL
 Source: %{name}-%{version}.tar.gz
@@ -42,6 +42,9 @@ rm -rf %{buildroot}
 %dir %{_nseventsdir}/%{name}-update
 
 %changelog
+* Thu Jul 27 2017 Filippo Carletti <filippo.carletti@gmail.com> - 2.1.3-1
+- Upstream update to CGP 1.0
+
 * Wed Jan 11 2017 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 2.1.2-1
 - httpd-admin: use KillMode=process - NethServer/dev#5190
 
