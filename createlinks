@@ -33,6 +33,7 @@ event_actions($event, qw(
 ));
 templates2events("/etc/httpd/conf.d/cgp.conf",  $event);
 templates2events("/etc/httpd/admin-conf.d/cgp.conf",  $event);
+templates2events("/usr/share/cockpit/nethserver/applications/nethserver-cgp.json",  $event);
 event_services($event, 'httpd' => 'reload');
 event_services($event, 'httpd-admin' => 'reload');
 
