@@ -1,0 +1,26 @@
+{
+  "id": "nethserver-cgp",
+  "name": "Collectd Charts",
+  "summary": "Provides collectd charts for NethServer",
+  "description": "Provides collectd charts for NethServer",
+  "url": "",
+  "homepage": "https://github.com/NethServer/nethserver-cgp",
+  "provides": ["nethserver-cgp"],
+  "release": {
+    "version": "1.0.0"
+  },
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/NethServer/dev/issues"
+  },
+  "author": {
+    "name": "Edoardo Spadoni",
+    "url": "https://github.com/NethServer/nethserver-cgp",
+    "email": "edoardo.spadoni@nethesis.it"
+  },
+  "infoapi": {
+    "path": "nethserver-cgp/read"
+  },
+  "icon": "logo.png",
+  "external": true
+}
