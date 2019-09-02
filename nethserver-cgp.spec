@@ -24,7 +24,6 @@ See: http://pommi.nethuis.nl/category/cgp/
 mkdir -p root/usr/share/cgp
 tar xzvf %{SOURCE1} --strip-components=1 -C root/usr/share/cgp
 cp %{SOURCE2} root/usr/share/cgp/conf/config.local.php
-find
 patch -p0 <  %{PATCH0}
 
 %build
