@@ -1,6 +1,6 @@
 Summary: NethServer web interface to collectd
 Name: nethserver-cgp
-Version: 2.1.4
+Version: 2.1.5
 Release: 1%{?dist}
 License: GPL
 Source: %{name}-%{version}.tar.gz
@@ -51,6 +51,9 @@ cp -a api/* %{buildroot}/usr/libexec/nethserver/api/%{name}/
 %dir %{_nseventsdir}/%{name}-update
 
 %changelog
+* Tue Sep 03 2019 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 2.1.5-1
+- Cockpit. List correct application version - NethServer/dev#5819
+
 * Tue Jul 09 2019 Davide Principi <davide.principi@nethesis.it> - 2.1.4-1
 - Cockpit legacy apps implementation - NethServer/dev#5782
 
