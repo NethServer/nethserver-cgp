@@ -3,5 +3,5 @@
 #
 Cmnd_Alias NSAPI_NETHSERVER_CGP = \
     /usr/libexec/nethserver/api/nethserver-cgp/read
-￼
+
 Defaults!NSAPI_NETHSERVER_CGP !requiretty
