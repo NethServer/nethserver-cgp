@@ -14,7 +14,7 @@
     my $public = $cgp{'PublicAccess'} || "enabled";
     my $access = "all granted";
     if ($public eq "disabled") {
-        $access = "$localAccess";
+        $access = "ip $localAccess";
     }
    
 
