@@ -1,0 +1,26 @@
+#
+# 50cgp
+#
+{
+    use esmith::ConfigDB;
+    use esmith::util;
+
+    my $alias = $cgp{'alias'} || "";
+
+    # initialize alias if needed
+    if ($alias eq "") {
+        $alias = esmith::util::genRandomHash();
+        my $confdb = esmith::ConfigDB->open();
+        $confdb->set_prop('cgp','alias',$alias);
+    }
+
+    
+    $OUT = "
+RewriteEngine On
+RewriteCond %{HTTP_HOST} !^localhost [NC]
+RewriteCond %{REMOTE_ADDR} !^127\.0\.0\.1\$
+RewriteCond %{HTTPS} !=on
+RewriteRule ^/$alias(/.*)?\$  https://%{HTTP_HOST}/$alias\$1  [L,R=301]
+";
+
+}
