@@ -37,6 +37,7 @@ rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/cockpit/%{name}/
 mkdir -p %{buildroot}/usr/share/cockpit/nethserver/applications/
 mkdir -p %{buildroot}/usr/libexec/nethserver/api/%{name}/
+mkdir -p %{buildroot}/etc/httpd/admin-conf.d
 cp -a manifest.json %{buildroot}/usr/share/cockpit/%{name}/
 cp -a logo.png %{buildroot}/usr/share/cockpit/%{name}/
 cp -a %{name}.json %{buildroot}/usr/share/cockpit/nethserver/applications/
@@ -49,6 +50,7 @@ cp -a api/* %{buildroot}/usr/libexec/nethserver/api/%{name}/
 %config(noreplace) /usr/share/cgp/conf/config.local.php
 %doc COPYING
 %dir %{_nseventsdir}/%{name}-update
+%dir /etc/httpd/admin-conf.d
 
 %changelog
 * Tue Oct 01 2019 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 2.2.0-1
