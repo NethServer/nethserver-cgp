@@ -28,5 +28,5 @@ hostname=$(hostname)
 
 if [[ $action == "app-info" ]]; then
     alias=$(/sbin/e-smith/config getprop cgp alias)
-    printf '{"url":"%s"}' "${protocol}//${host}/${alias}/host.php?h=${hostname}"
+    printf '{"url":"%s"}' "${protocol}//${host}:980/${alias}/host.php?h=${hostname}"
 fi

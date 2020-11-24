@@ -28,7 +28,7 @@ Alias /$alias /usr/share/cgp
 <Directory /usr/share/cgp>
     Options Indexes FollowSymLinks MultiViews
     AllowOverride all
-    Require $access
+    Require local $access
 </Directory>
 ";
 }
