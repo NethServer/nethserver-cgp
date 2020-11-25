@@ -14,6 +14,7 @@ BuildRequires: nethserver-devtools
 
 Requires: nethserver-collectd, nethserver-httpd
 Requires: nethserver-lib
+Requires: nethserver-httpd-admin-service
 
 %description
 NethServer web interface to collectd
