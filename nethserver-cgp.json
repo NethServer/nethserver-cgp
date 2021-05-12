@@ -1,8 +1,8 @@
 {
   "id": "nethserver-cgp",
   "name": "Collectd Charts",
-  "summary": "Provides collectd charts for NethServer",
-  "description": "Provides collectd charts for NethServer",
+  "summary": "Collectd web-based frontend",
+  "description": "Collectd web-based frontend",
   "url": "",
   "homepage": "https://github.com/NethServer/nethserver-cgp",
   "provides": ["nethserver-cgp"],
