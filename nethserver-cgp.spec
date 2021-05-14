@@ -1,6 +1,6 @@
 Summary: NethServer web interface to collectd
 Name: nethserver-cgp
-Version: 2.4.0
+Version: 2.4.1
 Release: 1%{?dist}
 License: GPL
 Source: %{name}-%{version}.tar.gz
@@ -52,6 +52,9 @@ cp -a api/* %{buildroot}/usr/libexec/nethserver/api/%{name}/
 %dir %{_nseventsdir}/%{name}-update
 
 %changelog
+* Fri May 14 2021 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 2.4.1-1
+- White-label support on Cockpit applications - NethServer/dev#6510
+
 * Wed Nov 25 2020 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 2.4.0-1
 - Access web applications from port 980 - NethServer/dev#6344
 
